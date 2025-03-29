@@ -1,9 +1,11 @@
-<html>
-
+<html lang="zh-CN">
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="referrer" content="never" />
-    <title>软件搜搜</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="数智软件搜索,数智软件,软件搜索,软件,构建数字生产力">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>数智软件搜索</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,14 +13,9 @@
     <div class="header">
 
         <h2>
-            <a href="https://github.com/ashuang360/rjss" target="_blank">
-                <span>软件搜搜</span>
-                <svg t="1668845472311" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" p-id="2657" width="24" height="24">
-                    <path
-                        d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9 23.5 23.2 38.1 55.4 38.1 91v112.5c0.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"
-                        p-id="2658" fill="#42505c"></path>
-                </svg>
+            <a href="https://project.diglit.cn/rjss" target="_blank">
+                <span>数智软件搜索</span>
+                <img src="rjss.png" alt="数智软件搜索图标" width="24" height="24">
             </a>
         </h2>
 
@@ -54,9 +51,44 @@
 
     <div id="content"></div>
 
-    <!-- <footer>
-        <span>Github</span>
-    </footer> -->
+     
+    <style>
+        /* 底部备案信息样式 */
+        .footer {
+            
+            bottom: 0; /* 距离底部0像素 */
+            left: 0; /* 距离左侧0像素 */
+            width: 100%; /* 宽度占满整个屏幕 */
+            text-align: center; /* 水平居中 */
+            padding: 20px 0; /* 上下内边距 */
+            background-color: transparent; /* 背景颜色设置为透明 */
+        }
+        /* 版权信息和备案信息样式 */
+        .footer p {
+            display: inline-block; /* 将段落元素设置为内联块元素，使其在同一行显示 */
+            margin: 0; /* 去除段落元素的默认外边距 */
+            padding: 0 1px; /* 设置段落元素的内边距，增加间距 */
+        }
+        /* 超链接样式 */
+        .footer a {
+            color: black; /* 设置超链接文字颜色为黑色 */
+            text-decoration: none; /* 去除下划线 */
+        }
+
+        /* 鼠标悬停时的超链接样式 */
+        .footer a:hover {
+            color: blue; /* 鼠标悬停时文字颜色变为蓝色 */
+            text-decoration: none; /* 鼠标悬停时不显示下划线 */
+        }
+    </style>
+    <div class="footer">
+        <!-- 版权信息 -->
+        <p>版权所有 &copy; <a href="https://diglit.cn" target="_blank">2024 数智未来DLCN(DigLit.cn)</a></p>
+        <!-- 备案号 -->
+        <p><a href="https://beian.miit.gov.cn/" target="_blank">鲁ICP备16010262号-13</a></p>
+        <!-- 用于显示当前时间的元素 -->
+        <p id="current-time"></p>
+    </div>
 
     <div class="toTop">
         <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +100,44 @@
         </svg>
     </div>
 </body>
+<script>
+    // 获取当前时间并更新到页面上
+    function updateTime() {
+        // 获取用于显示时间的元素
+        var currentTimeElement = document.getElementById('current-time');
+        // 获取当前时间
+        var currentTime = new Date();
+        // 获取小时数
+        var hours = currentTime.getHours();
+        // 获取分钟数
+        var minutes = currentTime.getMinutes();
+        // 获取秒数
+        var seconds = currentTime.getSeconds();
+        // 格式化小时数，不足两位补0
+        hours = hours < 10 ? '0' + hours : hours;
+        // 格式化分钟数，不足两位补0
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        // 格式化秒数，不足两位补0
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        // 拼接时间字符串
+        var timeString = hours + ':' + minutes + ':' + seconds;
+        // 更新页面上的时间显示
+        currentTimeElement.textContent = timeString;
+    }
 
+    // 每隔一秒更新一次时间
+    setInterval(updateTime, 1000);
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?93269c0c79747426cbf2532624a775dd";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
 <script src="main.js"></script>
 
 </html>
