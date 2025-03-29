@@ -1,52 +1,66 @@
+/* 定义名为 ruancang 的字体，字体粗细为 400，指定字体文件的来源 */
 @font-face {
     font-family: ruancang;
     font-weight: 400;
     src: url(https://dsfs.oppo.com/oppo/shop-pc-v2/main/fonts/OPPOSans-Regular.39ccf2a.ttf) format("truetype")
 }
 
+/* 再次定义名为 ruancang 的字体，字体粗细为 500，指定不同的字体文件来源 */
 @font-face {
     font-family: ruancang;
     font-weight: 500;
     src: url(https://dsfs.oppo.com/oppo/shop-pc-v2/main/fonts/OPPOSans-Medium.621326d.ttf) format("truetype")
 }
 
+/* 清除所有元素的内边距和外边距 */
 * {
     padding: 0;
     margin: 0;
 }
 
+/* 设置 body 和 input 元素的字体为 ruancang，备用字体为 Arial 等，字体粗细为 400 */
 body,
 input {
     font-family: "ruancang", Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 400;
 }
 
+/* 设置 body 元素在页面中水平居中 */
 body {
     margin: 0 auto;
 }
+
+/* 设置 body 内的 a 元素去掉下划线 */
 body a{
     text-decoration: none;
 }
+
+/* 设置头部元素距离顶部 30% 的视口高度 */
 .header{
     margin-top: 30vh;
 }
 
+/* 设置头部 h2 元素居中显示，并在底部添加 30px 的外边距 */
 .header h2{
     text-align: center;
     margin-bottom: 30px;
 }
+
+/* 设置头部 h2 元素内的 span 元素的字体粗细为 500，字号为 30px，颜色为 #42505c */
 .header h2 span{
     font-weight: 500;
     font-size: 30px;
     color: #42505c;
 }
 
+/* 设置搜索框容器为弹性布局，水平居中，相对定位 */
 #sousuo {
     display: flex;
     position: relative;
     justify-content: center;
 }
 
+/* 设置搜索输入框的宽度为 40% 的视口宽度，高度为 45px，圆角，背景颜色，内边距，字号和颜色 */
 #ssInput {
     width: 40vw;
     height: 45px;
@@ -58,11 +72,13 @@ body a{
     color: #555;
 }
 
+/* 设置搜索输入框在聚焦时无边框和轮廓 */
 #ssInput:focus-visible {
     border: none;
     outline: 0px;
 }
 
+/* 设置搜索按钮为弹性布局，水平和垂直居中，背景颜色，圆角和内边距 */
 #ssBtn {
     border: none;
     display: flex;
@@ -73,6 +89,7 @@ body a{
     border-radius: 0 8px 8px 0;
 }
 
+/* 设置列表项容器为弹性布局，垂直居中，添加底部边框和内边距 */
 .iterm-box {
     display: flex;
     align-items: center;
@@ -81,11 +98,13 @@ body a{
     padding: 15px 0;
 }
 
+/* 设置列表项内的 a 元素宽度为 100%，颜色为 #333 */
 .iterm-box a {
     width: 100%;
     color: #333;
 }
 
+/* 设置列表项内的高亮部分的背景颜色，圆角和内边距 */
 .iterm-box .highlight {
     background: #d7efea;
     margin: 0px 1px;
@@ -94,6 +113,7 @@ body a{
     font-size: 16px;
 }
 
+/* 设置列表项信息容器为弹性布局，水平两端对齐，字号和颜色 */
 .iterm-box .iterm-info {
     display: flex;
     justify-content: space-between;
@@ -102,6 +122,7 @@ body a{
     color: #bfbfbf;
 }
 
+/* 设置删除所有按钮默认隐藏，水平居中，颜色为 #89ceb9，底部外边距为 8px */
 .deleteAll{
     display: none;
     justify-content: center;
@@ -109,11 +130,13 @@ body a{
     margin-bottom: 8px;
 }
 
+/* 设置内容容器的宽度为 45% 的视口宽度，水平居中 */
 #content{
     width: 45vw;
     margin: 0 auto;
 }
 
+/* 设置返回顶部按钮默认隐藏，固定定位，右下角位置，背景颜色，宽度，高度和圆角 */
 .toTop{
     display: none;
     position: fixed;
@@ -127,14 +150,17 @@ body a{
     justify-content: center;
 }
 
-
+/* 设置搜索状态下头部元素的上下外边距为 2% 的视口高度 */
 .header.issearch{
     margin: 2vh 0;
 }
+
+/* 设置搜索状态下搜索输入框的宽度为 48% 的视口宽度 */
 #ssInput.issearch{
     width: 48vw;
 }
 
+/* 媒体查询，当屏幕宽度小于等于 768px 时，调整搜索输入框和内容容器的宽度 */
 @media screen and (max-width: 768px) {
     #ssInput {
         width: 80vw;
@@ -146,5 +172,4 @@ body a{
         width: 85vw;
         margin: 0 auto;
     }
-
 }

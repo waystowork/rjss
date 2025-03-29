@@ -1,27 +1,42 @@
+<!-- 设置文档的语言为中文 -->
 <html lang="zh-CN">
 <head>
+    <!-- 设置视口属性，用于适配不同设备的屏幕宽度 -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <!-- 设置引用策略，避免在请求中发送引用信息 -->
     <meta name="referrer" content="never" />
+    <!-- 设置字符编码为UTF-8 -->
     <meta charset="UTF-8">
+    <!-- 设置页面的关键词，有助于搜索引擎优化 -->
     <meta name="keywords" content="数智软件搜索,数智软件,软件搜索,软件,构建数字生产力">
+    <!-- 设置页面的图标 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- 设置页面的标题 -->
     <title>数智软件搜索</title>
+    <!-- 引入外部样式表 -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- 头部区域，包含标题和搜索框 -->
     <div class="header">
-
+        <!-- 标题部分，点击可跳转到指定链接 -->
         <h2>
             <a href="https://project.diglit.cn/rjss" target="_blank">
+                <!-- 标题文字 -->
                 <span>数智软件搜索</span>
+                <!-- 标题图标 -->
                 <img src="rjss.png" alt="数智软件搜索图标" width="24" height="24">
             </a>
         </h2>
 
+        <!-- 搜索框容器 -->
         <div id="sousuo">
+            <!-- 搜索输入框，按下回车键触发 onkeydownEnter 函数 -->
             <input id="ssInput" type="text" placeholder="输入并搜索" onkeydown="onkeydownEnter()">
+            <!-- 搜索按钮，点击触发 ssGo 函数 -->
             <div id="ssBtn" onclick="ssGo()">
+                <!-- 搜索图标 -->
                 <?xml version="1.0" encoding="UTF-8"?><svg width="20" height="20" viewBox="0 0 48 48" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -37,7 +52,9 @@
         </div>
     </div>
 
+    <!-- 清空搜索结果按钮 -->
     <div class="deleteAll">
+        <!-- 清空图标 -->
         <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 10V44H39V10H9Z" fill="none" stroke="#89ceb9" stroke-width="4" stroke-linejoin="round" />
             <path d="M20 20V33" stroke="#89ceb9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
@@ -46,18 +63,14 @@
             <path d="M16 10L19.289 4H28.7771L32 10H16Z" fill="none" stroke="#89ceb9" stroke-width="4"
                 stroke-linejoin="round" />
         </svg>
+        <!-- 点击按钮触发 clickDelete 函数 -->
         <div onclick="clickDelete()"> 清空搜索结果</div>
     </div>
-
-    <div id="content"></div>
-
-     
+    <!-- 底部备案信息样式 -->
     <style>
-        /* 底部备案信息样式 */
+        /* 底部备案信息容器样式 */
         .footer {
-            
-            bottom: 0; /* 距离底部0像素 */
-            left: 0; /* 距离左侧0像素 */
+            position: relative; /* 相对定位，使底部信息不固定 */
             width: 100%; /* 宽度占满整个屏幕 */
             text-align: center; /* 水平居中 */
             padding: 20px 0; /* 上下内边距 */
@@ -81,6 +94,7 @@
             text-decoration: none; /* 鼠标悬停时不显示下划线 */
         }
     </style>
+    <!-- 底部备案信息区域 -->
     <div class="footer">
         <!-- 版权信息 -->
         <p>版权所有 &copy; <a href="https://diglit.cn" target="_blank">2024 数智未来DLCN(DigLit.cn)</a></p>
@@ -89,8 +103,11 @@
         <!-- 用于显示当前时间的元素 -->
         <p id="current-time"></p>
     </div>
-
+<!-- 搜索结果显示区域 -->
+<div id="content"></div>
+    <!-- 返回顶部按钮 -->
     <div class="toTop">
+        <!-- 返回顶部图标 -->
         <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M24.0083 14.1006V42.0001" stroke="#fff" stroke-width="4" stroke-linecap="round"
                 stroke-linejoin="round" />
@@ -101,7 +118,10 @@
     </div>
 </body>
 <script>
-    // 获取当前时间并更新到页面上
+    /**
+     * 更新页面上的当前时间
+     * 该函数获取当前时间并将其格式化为 HH:MM:SS 的字符串，然后更新到页面上
+     */
     function updateTime() {
         // 获取用于显示时间的元素
         var currentTimeElement = document.getElementById('current-time');
@@ -129,15 +149,18 @@
     setInterval(updateTime, 1000);
 </script>
 <script>
+    // 百度统计代码，用于统计网站访问数据
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
+      // 引入百度统计的脚本文件
       hm.src = "https://hm.baidu.com/hm.js?93269c0c79747426cbf2532624a775dd";
       var s = document.getElementsByTagName("script")[0]; 
+      // 将脚本插入到文档中
       s.parentNode.insertBefore(hm, s);
     })();
-    </script>
-    
+</script>
+<!-- 引入外部脚本文件 -->
 <script src="main.js"></script>
 
 </html>
